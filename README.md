@@ -12,12 +12,15 @@ The original data source has input data is spread across 3 files "train_FD001.tx
 The ith line of the "RUL" data represents the number of cycles remaining for the test device with id i. We'll have to join these tables when the time comes.
 
 ## Selected features ## 
-
+I'll be using all given features except the id and cycle# as input variables for my models.
 
 ## Aggregate features ##
+To see a degredation in sensor data over time, I'll be aggregating sensor values into a weighted average over the past 5 cycles. Hopefully this will allow my model to forecast an imprending breakdown.
 
 ## Labels ##
+I'll be using 2 types of labels 1. Number of cycles remaining and 2. Whether the number of cycles remaining is below some threshold.
 
 ## Models ##
+For the number of cycles remaing I'll be using a random forest regression. For whether or not the machine is below some threshold I'll be using a logistic regression.
 
 # Results #
